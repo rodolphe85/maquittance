@@ -1,13 +1,16 @@
-<h1>Mon profile</h1>
+<h1><%= @landlord.name%></h1>
 
 <ul>
-  <li>Nom: <%= @landlord.name%></li>
-  <li>Rue: <%= @landlord.street%><li>
-  <li>Ville: <%= @landlord.city%></li>
-  <li>Code Postal: <%= @landlord.zip%></li>
-  <li>Tel: <%= @landlord.phone%></li>
-  <li>Mail: <%= @landlord.email%></li>
+  <li><%= @landlord.street%><li>
+  <li><%= @landlord.city%></li>
+  <li><%= @landlord.zip%></li>
+  <li><%= @landlord.phone%></li>
+  <li><%= @landlord.email%></li>
 </ul>
+
+<h1>My Properties</h1>
+
+<%= render 'properties' %>
 
 
 

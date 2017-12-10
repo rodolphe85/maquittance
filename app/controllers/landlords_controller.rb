@@ -1,5 +1,9 @@
 class LandlordsController < ApplicationController
 
+  def home
+
+  end
+
   def index
     @landlords = Landlord.all
   end
@@ -23,6 +27,7 @@ class LandlordsController < ApplicationController
   end
 
   def edit
+    @landlord = Landlord.find(params[:id])
   end
 
   def update

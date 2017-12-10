@@ -1,0 +1,8 @@
+<% @landlords.each do |l| %>
+  <%= link_to l.name, landlord_path(l) %> |
+  <%= l.street %> |
+  <%= l.city %> |
+  <%= l.zip %> |
+  <%= l.phone %> |
+  <%= l.email %>
+<% end %>

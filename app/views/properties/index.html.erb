@@ -1,0 +1,11 @@
+<h1>My Properties</h1>
+
+<% @properties.each do |l| %>
+  <%#= link_to l.landlord.name, landlord_path([@landlord, @property]) %>
+  <%= l.street %> |
+  <%= l.city %> |
+  <%= l.zip %> |
+  <%= l.rent %> |
+  <%= l.charges %>
+
+<% end %>

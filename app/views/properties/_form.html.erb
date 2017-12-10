@@ -1,0 +1,10 @@
+<%= simple_form_for ([@landlord, @property]) do |f| %>
+  <%= f.input :name, label: 'Name of property', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :street %>
+  <%= f.input :city, placeholder: 'your town' %>
+  <%= f.input :zip, inline_label: 'Yes, remember me' %>
+  <%= f.input :rent %>
+  <%= f.input :charges %>
+
+  <%= f.button :submit %>
+<% end %>

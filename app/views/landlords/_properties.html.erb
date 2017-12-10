@@ -1,0 +1,9 @@
+<% @landlord.properties.each do |p| %>
+  <%#= link_to p.name, landlord_property_path(p) %>
+  <%= p.street %> |
+  <%= p.city %> |
+  <%= p.zip %> |
+  <%= p.rent %> |
+  <%= p.charges %> |
+  <%= link_to 'edit', edit_landlord_property_path([@landlord, @property]) %>
+<% end %>
