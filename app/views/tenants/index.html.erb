@@ -1,6 +1,6 @@
 <h1>My Tenants</h1>
 <br>
-<table style="width:75%">
+<table style="width:100%">
   <tr>
     <th>Name</th>
     <th>Street</th>
@@ -8,6 +8,7 @@
     <th>Post Code</th>
     <th>Email</th>
     <th>Phone</th>
+    <th>Property</th>
   </tr>
 
 <% @tenants.each do |l| %>
@@ -18,6 +19,7 @@
     <td><%= l.zip %></td>
     <td><%= l.email %></td>
     <td><%= l.phone %></td>
+    <td><%= l.property.name %></td>
     <td><%= link_to 'edit', edit_tenant_path(l.id) %></td>
     <td><%= link_to 'delete', l, method: :delete, data: { confirm: "Are you sure?" } %></td>
   </tr>
