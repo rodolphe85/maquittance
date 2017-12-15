@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
 
 
-  root to: 'landlords#index'
+  root to: 'properties#index'
 
-  resources :landlords do
-      resources :properties
-  end
+  resources :landlords
+
+  resources :properties
 
   resources :tenants
 

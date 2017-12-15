@@ -5,6 +5,7 @@
   <%= f.input :zip, inline_label: 'Yes, remember me' %>
   <%= f.input :rent %>
   <%= f.input :charges %>
+  <%= f.association :landlord %>
 
   <%= f.button :submit %>
 <% end %>

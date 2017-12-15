@@ -31,6 +31,11 @@ class LandlordsController < ApplicationController
   end
 
   def update
+    if @landlord.update(vehicle_params)
+      redirect_to @landlord
+    else
+      render :edit
+    end
   end
 
   def destroy

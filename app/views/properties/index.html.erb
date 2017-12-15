@@ -1,11 +1,30 @@
 <h1>My Properties</h1>
+<br>
+<table style="width:75%">
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Post Code</th>
+    <th>Rent</th>
+    <th>Charges</th>
+  </tr>
 
 <% @properties.each do |l| %>
-  <%#= link_to l.landlord.name, landlord_path([@landlord, @property]) %>
-  <%= l.street %> |
-  <%= l.city %> |
-  <%= l.zip %> |
-  <%= l.rent %> |
-  <%= l.charges %>
+  <tr>
+    <td><%= l.name %></td>
+    <td><%= l.city %></td>
+    <td><%= l.zip %></td>
+    <td><%= l.rent %></td>
+    <td><%= l.charges %></td>
+    <td><%= link_to 'edit', edit_property_path(l.id) %></td>
+    <td><%= link_to 'delete', l, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
 
 <% end %>
+
+</table>
+<br>
+<br>
+<%= link_to 'new', new_property_path %>
+
+
