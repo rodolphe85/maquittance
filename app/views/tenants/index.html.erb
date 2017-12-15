@@ -1,2 +1,30 @@
-<h1>Tenants#index</h1>
-<p>Find me in app/views/tenants/index.html.erb</p>
+<h1>My Tenants</h1>
+<br>
+<table style="width:75%">
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>Post Code</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+<% @tenants.each do |l| %>
+  <tr>
+    <td><%= l.name %></td>
+    <td><%= l.street %></td>
+    <td><%= l.city %></td>
+    <td><%= l.zip %></td>
+    <td><%= l.email %></td>
+    <td><%= l.phone %></td>
+    <td><%= link_to 'edit', edit_tenant_path(l.id) %></td>
+    <td><%= link_to 'delete', l, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+
+<% end %>
+
+</table>
+<br>
+<br>
+<%= link_to 'new', new_tenant_path %>

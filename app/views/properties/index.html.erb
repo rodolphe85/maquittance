@@ -7,6 +7,7 @@
     <th>Post Code</th>
     <th>Rent</th>
     <th>Charges</th>
+    <th>Receivable</th>
   </tr>
 
 <% @properties.each do |l| %>
@@ -16,6 +17,7 @@
     <td><%= l.zip %></td>
     <td><%= l.rent %></td>
     <td><%= l.charges %></td>
+    <td><%= l.receivable %></td>
     <td><%= link_to 'edit', edit_property_path(l.id) %></td>
     <td><%= link_to 'delete', l, method: :delete, data: { confirm: "Are you sure?" } %></td>
   </tr>

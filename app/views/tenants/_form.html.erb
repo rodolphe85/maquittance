@@ -1,0 +1,11 @@
+<%= simple_form_for ([@property, @tenant]) do |f| %>
+  <%= f.input :name, label: 'Name of tenant', error: 'Name is mandatory, please specify one' %>
+  <%= f.input :street %>
+  <%= f.input :city, placeholder: 'Tenants town' %>
+  <%= f.input :zip, inline_label: 'Yes' %>
+  <%= f.input :email %>
+  <%= f.input :phone %>
+  <%= f.association :property %>
+
+  <%= f.button :submit %>
+<% end %>
