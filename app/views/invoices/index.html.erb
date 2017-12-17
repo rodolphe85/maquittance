@@ -1,0 +1,27 @@
+<h1>My Invoices</h1>
+<br>
+<table style="width:100%">
+  <tr>
+    <th>Title</th>
+    <th>Term</th>
+    <th>Property</th>
+    <th>Tenant</th>
+  </tr>
+
+<% @invoices.each do |l| %>
+  <tr>
+    <td><%= l.title %></td>
+    <td><%= l.month_period %></td>
+    <td><%= l.property.name %></td>
+    <td><%= l.tenant.name %></td>
+    <td><%= link_to 'show', invoice_path(l.id) %></td>
+    <td><%= link_to 'edit', edit_invoice_path(l.id) %></td>
+    <td><%= link_to 'delete', l, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+
+<% end %>
+
+</table>
+<br>
+<br>
+<%= link_to 'new', new_invoice_path %>

@@ -31,7 +31,9 @@ class LandlordsController < ApplicationController
   end
 
   def update
-    if @landlord.update(vehicle_params)
+    @landlord = Landlord.find(params[:id])
+
+    if @landlord.update_attributes(landlord_params)
       redirect_to @landlord
     else
       render :edit
