@@ -31,6 +31,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 
 gem 'simple_form'
+
+gem 'rails-i18n'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -20,9 +20,9 @@
   <div class="row summary">
     <h3>Quittance de loyer</h3>
     <br>
-    Délivrée le : <%= @invoice.date%> <br>
+    Délivrée le : <%= @invoice.date.strftime("%d-%m-%y") %> <br>
 
-    Pour la période du : <%= @invoice.from%> au <%= @invoice.to%> <br>
+    Pour la période du : <%= @invoice.from.strftime("%d-%m-%y") %> au <%= @invoice.to.strftime("%d-%m-%y")%> <br>
     Addresse de la location :  <%= @invoice.property.name%> <br>
     <br>
     <br>
@@ -50,17 +50,18 @@
   <div class="row paragraph">
     <p class="indent">
     Je soussigné, <%= @invoice.property.landlord.name%>, propriétaire du bien désigné ci-dessus,
-    déclare avoir reçu la some de <%= @invoice.total %> Euros au titre du paiement du loyer et des charges des locaux que
-    le locataire susnommé occupe à l'addresse désignée ci-dessus pour la période du : <%= @invoice.from%> au <%= @invoice.to%>.
+    déclare avoir reçu la somme de <%= @invoice.total %> Euros au titre du paiement du loyer et des charges des locaux que
+    le locataire susnommé occupe à l'addresse désignée ci-dessus pour la période du : <%= @invoice.from.strftime("%d-%m-%y")%> au
+     <%= @invoice.to.strftime("%d-%m-%y")%>.
     </p>
     <p>
       Donne quittance sans préjudice du terme courant et sous réserve de tous mes droits.
     </p>
   </div>
-<br>
+   <div class="spacer"></div>
   <div class="row">
     <p>
-      A <%= @invoice.property.landlord.city%>, le : <%= @invoice.date%>
+      A <%= @invoice.property.landlord.city%>, le : <%= @invoice.date.strftime("%d-%m-%y")%>
     </p>
     <br>
     <p><%= image_tag "signature.jpg" %></p>
