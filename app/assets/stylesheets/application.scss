@@ -1,8 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import url("invoice.scss");
+
+.container {
+  font-size: 1.3em;
+}
 
 ul {
   list-style-type: none;
   padding:0;
+}
+
+.spacer {
+  margin: 8em;
 }

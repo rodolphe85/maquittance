@@ -1,65 +1,78 @@
-<ul>
-  <li><h3><%= @invoice.property.landlord.name%></h3></li>
-  <li><%= @invoice.property.landlord.street%></li>
-  <li><%= @invoice.property.landlord.zip%></li>
-  <li><%= @invoice.property.landlord.city%></li>
-</ul>
+<div class="container">
+  <div class="row landlord">
+    <ul>
+      <li><h3><%= @invoice.property.landlord.name%></h3></li>
+      <li><%= @invoice.property.landlord.street%></li>
+      <li><%= @invoice.property.landlord.zip%></li>
+      <li><%= @invoice.property.landlord.city%></li>
+    </ul>
+  </div>
 
-<ul>
-  <li><h3><%= @invoice.tenant.name%></h3></li>
-  <li><%= @invoice.tenant.street%></li>
-  <li><%= @invoice.tenant.zip%></li>
-  <li><%= @invoice.tenant.city%></li>
-</ul>
+  <div class="row tenant">
+    <ul>
+      <li><h3><%= @invoice.tenant.name%></h3></li>
+      <li><%= @invoice.tenant.street%></li>
+      <li><%= @invoice.tenant.zip%></li>
+      <li><%= @invoice.tenant.city%></li>
+    </ul>
+  </div>
 
+  <div class="row summary">
+    <h3>Quittance de loyer</h3>
+    <br>
+    Délivrée le : <%= @invoice.date%> <br>
 
-
-<h3>Quittance de loyer</h3>
-
-délivrée le: <%= @invoice.date%> <br>
-
-Pour la période du: <%= @invoice.from%> au <%= @invoice.to%> <br>
-Addresse de la location:  <%= @invoice.property.name%> <br>
+    Pour la période du : <%= @invoice.from%> au <%= @invoice.to%> <br>
+    Addresse de la location :  <%= @invoice.property.name%> <br>
+    <br>
+    <br>
+    <table style="width:50%">
+      <tr>
+        <th>definition</th>
+        <th>Montant</th>
+      </tr>
+      <tr>
+        <td>loyer</td>
+        <td><%= @invoice.property.rent%></td>
+      </tr>
+      <tr>
+        <td>Provisions sur charges</td>
+        <td><%= @invoice.property.charges%></td>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td><%= @invoice.total %></td>
+      </tr>
+    </table>
+      </div>
 <br>
 <br>
-<table style="width:20%">
-  <tr>
-    <th>definition</th>
-    <th>Montant</th>
-  </tr>
-  <tr>
-    <td>loyer</td>
-    <td><%= @invoice.property.rent%></td>
-  </tr>
-  <tr>
-    <td>Provisions sur charges</td>
-    <td><%= @invoice.property.charges%></td>
-  </tr>
-  <tr>
-    <td>TOTAL</td>
-    <td><%= @invoice.total %></td>
-  </tr>
-</table>
+  <div class="row paragraph">
+    <p class="indent">
+    Je soussigné, <%= @invoice.property.landlord.name%>, propriétaire du bien désigné ci-dessus,
+    déclare avoir reçu la some de <%= @invoice.total %> Euros au titre du paiement du loyer et des charges des locaux que
+    le locataire susnommé occupe à l'addresse désignée ci-dessus pour la période du : <%= @invoice.from%> au <%= @invoice.to%>.
+    </p>
+    <p>
+      Donne quittance sans préjudice du terme courant et sous réserve de tous mes droits.
+    </p>
+  </div>
 <br>
-<br>
-<p>
-  Je soussigné, <%= @invoice.property.landlord.name%>, propriétaire du bien désigné ci-dessus,
-déclare avoir reçu la some de <%= @invoice.total %> Euros au titre du paiement du loyer et des charges des locaux que
-le locataire susnommé occupe à l'addresse désignée ci-dessus pour la période du: <%= @invoice.from%> au <%= @invoice.to%>.
-</p>
-<p>
-  Donne quittance sans préjudice du terme courant et sous réserve de tous mes droits.
-</p>
-<p>
-  A <%= @invoice.property.landlord.city%> le: <%= @invoice.date%>
-</p>
-<p> SIGNATURE</p>
-<p>
-  Cette quittance annule tous les reçus qui auraient pu être établis précédemment en cas de paiement partiel du montant du
-  présent terme. Elle est à conserver pendant cinq ans par le locataire (article 2224 du Code civil)
-</p>
+  <div class="row">
+    <p>
+      A <%= @invoice.property.landlord.city%>, le : <%= @invoice.date%>
+    </p>
+    <br>
+    <p><%= image_tag "signature.jpg" %></p>
+    <br>
+    <p class="footer">
+      Cette quittance annule tous les reçus qui auraient pu être établis précédemment en cas de paiement partiel du montant du
+      présent terme. Elle est à conserver pendant cinq ans par le locataire (article 2224 du Code civil)
+    </p>
+  </div>
 
 
+</div>
 
 
 
