@@ -1,2 +1,44 @@
-<h1>Tenants#show</h1>
-<p>Find me in app/views/tenants/show.html.erb</p>
+<h1>Tenant Details</h1>
+<br>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>Post Code</th>
+    <th>Property</th>
+  </tr>
+
+
+  <tr>
+    <td><%= @tenant.name %></td>
+    <td><%= @tenant.street %></td>
+    <td><%= @tenant.city %></td>
+    <td><%= @tenant.zip %></td>
+    <td><%= @tenant.property.name %></td>
+  </tr>
+
+  <tr height = 20px></tr>
+
+  <tr>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+  <tr>
+    <td><%= @tenant.email %></td>
+    <td><%= @tenant.phone %></td>
+  </tr>
+
+  <tr height = 20px></tr>
+
+  <tr>
+    <td><%= link_to 'Edit', edit_tenant_path %></td>
+    <td><%= link_to 'Back', tenants_path %></td>
+    <td><%= link_to 'Delete', @tenant, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+
+
+
+
+</table>
