@@ -19,6 +19,14 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
+    respond_to do |format|
+     format.html
+     format.pdf do
+       render pdf: "quittance",
+       template: "invoices/show.html.erb",
+       layout: 'pdf.html'
+     end
+    end
   end
 
   def edit

@@ -13,7 +13,6 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -33,6 +32,10 @@ gem 'jquery-rails'
 gem 'simple_form'
 
 gem 'rails-i18n'
+
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary', '~> 0.12.3.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
