@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row landlord">
     <ul>
-      <li><h3><%= @invoice.property.landlord.name%></h3></li>
+      <li><h4><%= @invoice.property.landlord.name%></h4></li>
       <li><%= @invoice.property.landlord.street%></li>
       <li><%= @invoice.property.landlord.zip%></li>
       <li><%= @invoice.property.landlord.city%></li>
@@ -10,7 +10,7 @@
 
   <div class="row tenant">
     <ul>
-      <li><h3><%= @invoice.tenant.name%></h3></li>
+      <li><h4><%= @invoice.tenant.name%></h4></li>
       <li><%= @invoice.tenant.street%></li>
       <li><%= @invoice.tenant.zip%></li>
       <li><%= @invoice.tenant.city%></li>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="row summary">
-    <h3>Quittance de loyer</h3>
+    <h4>Quittance de loyer</h4>
     <br>
     Délivrée le : <%= @invoice.date.strftime("%d-%m-%y") %> <br>
 
@@ -26,9 +26,11 @@
     Addresse de la location :  <%= @invoice.property.name%> <br>
     <br>
     <br>
+    <br>
+    <br>
     <table style="width:50%">
       <tr>
-        <th>definition</th>
+        <th>Definition</th>
         <th>Montant</th>
       </tr>
       <tr>
@@ -45,6 +47,8 @@
       </tr>
     </table>
       </div>
+<br>
+<br>
 <br>
 <br>
   <div class="row paragraph">
@@ -64,7 +68,7 @@
       A <%= @invoice.property.landlord.city%>, le : <%= @invoice.date.strftime("%d-%m-%y")%>
     </p>
     <br>
-    <p><%= image_tag "signature.jpg" %></p>
+    <p><%= wicked_pdf_image_tag 'signature.jpg' %></p>
     <br>
     <p class="footer">
       Cette quittance annule tous les reçus qui auraient pu être établis précédemment en cas de paiement partiel du montant du

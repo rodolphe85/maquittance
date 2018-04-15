@@ -4,7 +4,7 @@
 @import url("invoice.scss");
 
 .container {
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 ul {
@@ -14,4 +14,8 @@ ul {
 
 .spacer {
   margin: 8em;
+}
+
+h4 {
+  font-weight:bold;
 }
